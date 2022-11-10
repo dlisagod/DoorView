@@ -1,7 +1,6 @@
 package com.example.myapplication
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.databinding.ActivityDrawBinding
@@ -22,9 +21,12 @@ class DrawAct : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         vb = ActivityDrawBinding.inflate(layoutInflater)
         setContentView(vb.root)
-//        vb.tv.setOnClickListener {
-//            recreate()
-//        }
+        vb.tv.setOnClickListener {
+            vb.door.also {
+                if (!it.closing) it.startCloseDoor()
+                else it.stopCloseDoor(true)
+            }
+        }
         Log.d("onCreate", "onCreate")
     }
 

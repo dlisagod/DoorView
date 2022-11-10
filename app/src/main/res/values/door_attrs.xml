@@ -4,5 +4,12 @@
     <declare-styleable name="DoorView">
         <attr name="recRadius" format="dimension" />
         <attr name="pic" format="reference" />
+        <attr name="picWidth" format="dimension" />
+        <attr name="picHeight" format="dimension" />
+        <attr name="picX" format="dimension" />
+        <attr name="picY" format="dimension" />
+        <attr name="strokeWidth" format="dimension" />
+        <attr name="recWidth" format="dimension" />
+        <attr name="recHeight" format="dimension" />
     </declare-styleable>
 </resources>
