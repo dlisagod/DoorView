@@ -43,7 +43,6 @@ class DoorView @JvmOverloads constructor(
     private var recWidth = 0F
     private var recHeight = 0F
     private var bitmap: Bitmap? = null
-    private var drawable: Drawable? = null
     private var picX: Float = 0F
     private var picY: Float = 0F
     private var picWidth: Float = 0F
@@ -67,11 +66,17 @@ class DoorView @JvmOverloads constructor(
             picY = it.getDimension(R.styleable.DoorView_picY, 0F)
             it.recycle()
         }
+        test()
 //        leftSide = width / 2F
 //        topSide = 0F
 //        rightSide = width.toFloat()
 //        bottomSide = height.toFloat()
 //        Log.d(javaClass.simpleName, "$leftSide $topSide $rightSide $bottomSide")
+    }
+
+    private fun test(){
+        val test = 1
+        val a = 2
     }
 
     override fun onDraw(canvas: Canvas) {
@@ -221,6 +226,7 @@ class DoorView @JvmOverloads constructor(
 //            bottomSide,
 //            paint
 //        )
+//        canvas.drawRect(width/2f)
         canvas.drawRoundRect(
             width / 2F,
             height.toFloat() / 2 - recHeight / 2 + strokeWidth,
@@ -277,7 +283,6 @@ class DoorView @JvmOverloads constructor(
         initDefSide(width, height)
     }
 
-
     private var runnable = object : Runnable {
         override fun run() {
             degress--
@@ -286,7 +291,7 @@ class DoorView @JvmOverloads constructor(
                 postDelayed(this, 20)
             } else {
                 postDelayed(this, 2000)
-                degress = 0F
+                degress = 1F
             }
         }
     }
